@@ -1,0 +1,21 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+
+.header-menu{
+    display: flex;
+    list-style: none;
+    width: 20vw;
+    justify-content: space-between;
+}
+a{
+    color:black;
+    text-decoration: none;
+    opacity: 0.5;
+}
+/* .active kontrol et*/
+.header-menu li:hover, .active{
+    opacity: 1;
+}
+
+
