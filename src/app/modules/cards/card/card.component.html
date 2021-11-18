@@ -1,21 +1,36 @@
-
-  <mat-card class="example-card">
-    <mat-card-header>
-      <mat-card-title>{{card.title}}</mat-card-title>
-      <mat-card-subtitle>{{card.name}} </mat-card-subtitle>
-    </mat-card-header>
-    <mat-card-content>
-      <mat-list>
-        <mat-list-item>{{card.phone}} </mat-list-item>
-        <mat-divider></mat-divider>
-        <mat-list-item>{{card.email}}</mat-list-item>
-        <mat-divider></mat-divider>
-        <mat-list-item>{{card.address}}</mat-list-item>
-      </mat-list>
-    </mat-card-content>
-    <mat-card-actions>
-      <button mat-button>LIKE</button>
-      <button mat-button>SHARE</button>
-    </mat-card-actions>
-  </mat-card>
- 
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title>{{ card.title }}</mat-card-title>
+    <mat-card-subtitle *ngIf="card.name; else noName">
+      {{ card.name }}
+    </mat-card-subtitle>
+    <ng-template #noName> <span>Name is not entered.</span> </ng-template>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-list class="card-list-info-container">
+      <mat-list-item>{{ card.phone }} </mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item *ngIf="card.email; else noEmail">{{
+        card.email
+      }}</mat-list-item>
+      <mat-list-item>
+        <ng-template #noEmail>
+          <span class="no-info-description">E-Mail is not entered. </span>
+        </ng-template>
+      </mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item *ngIf="card.address; else noAddress">{{
+        card.address
+      }}</mat-list-item>
+      <mat-list-item>
+        <ng-template #noAddress>
+          <span class="no-info-description"> Address is not entered.</span>
+        </ng-template>
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button>LIKE</button>
+    <button mat-button>SHARE</button>
+  </mat-card-actions>
+</mat-card>
