@@ -23,7 +23,9 @@ export class CardsComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  openCardModal(){
-    this.dialog.open(CardModalComponent)
+  openCardModal(): void {
+    this.dialog.open(CardModalComponent, {
+      width: '400px'
+    })
   }
 }
