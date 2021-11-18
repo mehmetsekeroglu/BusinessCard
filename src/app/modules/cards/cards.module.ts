@@ -14,6 +14,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { CardModalComponent } from './card-modal/card-modal.component';
 import {MatInputModule} from '@angular/material/input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 
 
@@ -31,9 +32,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatDialogModule,
     MatInputModule,
     FormsModule,
-    ReactiveFormsModule
-
-    
+    ReactiveFormsModule,
+    MatSnackBarModule
   ],
 })
 export class CardsModule {}
