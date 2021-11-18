@@ -8,8 +8,11 @@
       <button mat-raised-button color="primary" (click)="openCardModal()">Add Card</button>
     </div>
   </div>
-<hr />
-  <div>
-    <app-card [card]="cardItem" class="card-container"></app-card>
+<hr/>
+<div class="card-container">
+  <div *ngFor="let card of cards">
+    <app-card [card]="card" ></app-card>
   </div>
+</div>
+  
 </main>
