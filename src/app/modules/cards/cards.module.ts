@@ -12,6 +12,10 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { CardComponent } from './card/card.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { CardModalComponent } from './card-modal/card-modal.component';
+import {MatInputModule} from '@angular/material/input';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+
 
 @NgModule({
   declarations: [CardsComponent, CardComponent, CardModalComponent],
@@ -25,6 +29,11 @@ import { CardModalComponent } from './card-modal/card-modal.component';
     MatListModule,
     MatGridListModule,
     MatDialogModule,
+    MatInputModule,
+    FormsModule,
+    ReactiveFormsModule
+
+    
   ],
 })
 export class CardsModule {}
