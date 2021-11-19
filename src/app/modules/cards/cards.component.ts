@@ -15,7 +15,8 @@ export class CardsComponent implements OnInit {
 
   constructor(
     public dialog: MatDialog,
-    private cardService: CardService) { }
+    private cardService: CardService
+    ) { }
 
   ngOnInit(): void {
     this.getCards()

@@ -1,11 +1,10 @@
-<mat-card class="example-card">
-  <mat-card-header>
+<mat-card class="example-card" >
+  <mat-card-header class="card-header" (click)="openCardModalUpdate(card)">
     <mat-card-title>{{ card.title }}</mat-card-title>
     <mat-card-subtitle *ngIf="card.name"><span> {{ card.name }}</span>
     </mat-card-subtitle>
-    <mat-card-subtitle *ngIf="!card.name"><span>Name is not entered.</span>
+    <mat-card-subtitle *ngIf="!card.name"><span class="no-info-color">Name is not entered.</span>
     </mat-card-subtitle>
-   
   </mat-card-header>
   <mat-card-content>
     <mat-list class="card-list-info-container">
@@ -14,14 +13,14 @@
       <mat-list-item *ngIf="card.email"
         ><span>{{ card.email }}</span></mat-list-item>
       <mat-list-item *ngIf="!card.email">
-        <span>Email is not entered.</span>
+        <span class="no-info-color">Email is not entered.</span>
       </mat-list-item>
       <mat-divider></mat-divider>
       <mat-list-item *ngIf="card.address">
         <span> {{ card.address }}</span>
       </mat-list-item>
       <mat-list-item *ngIf="!card.address">
-          <span> Address is not entered.</span>
+          <span class="no-info-color"> Address is not entered.</span>
       </mat-list-item>
     </mat-list>
   </mat-card-content>

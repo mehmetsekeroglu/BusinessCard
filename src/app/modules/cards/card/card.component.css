@@ -1,8 +1,12 @@
 .example-card{
     min-width: 18vw;
     margin: 1vw;
-  }
+}
 
-  .no-info-description{
-    margin: 2vh;
-  }
+.card-header{
+  cursor: pointer;
+}
+
+.no-info-color{
+    color: rgb(245, 180, 59)
+}
