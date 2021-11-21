@@ -24,7 +24,7 @@
         >.
       </p>
     </div>
-    <div *ngFor="let card of cardService.card">
+    <div *ngFor="let card of cardService.filteredCard">
       <app-card [card]="card"></app-card>
     </div>
   </div>

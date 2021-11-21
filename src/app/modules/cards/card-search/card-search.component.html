@@ -1,7 +1,7 @@
 <form>
 <mat-form-field class="example-full-width" appearance="fill">
-    <mat-label>Favorite food</mat-label>
-    <input matInput placeholder="Ex. Pizza" value="Sushi">
+    <mat-label>Search Card</mat-label>
+    <input matInput placeholder="Title, Name or Company Name" #searchText (keyup)="search(searchText.value)">
   </mat-form-field>
 </form>
 

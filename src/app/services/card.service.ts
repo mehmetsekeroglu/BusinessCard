@@ -8,7 +8,8 @@ import { Card } from '../models/card';
 })
 export class CardService {
 
-card!: Card[]  
+card!: Card[]
+filteredCard!: Card[]  
 
   constructor(
     @Inject('apiUrl') private apiUrl: String,
@@ -18,7 +19,7 @@ card!: Card[]
   getCards():void {
     this.http.get<Card[]>(this.apiUrl+"/cards")
     .subscribe((res:Card[])=>{
-      this.card = res
+      this.card = this.filteredCard = res;
     })
   }
 
