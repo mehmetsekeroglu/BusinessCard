@@ -4,21 +4,28 @@
       <h1 class="page-title">My Cards</h1>
       <p class="page-description">In this page you can manage your cards.</p>
     </div>
-    <div class="cards-header-button">
-      <button mat-raised-button color="primary" (click)="openCardModal()">Add Card</button>
+    <div class="card-search">
+      <app-card-search></app-card-search>
+        <button mat-raised-button color="primary" (click)="openCardModal()">
+          Add Card
+        </button> 
     </div>
   </div>
-<hr/>
-<div class="card-container">
-  <div *ngIf="!cardService.card">
-    <p>Wait Please</p> 
+  <hr />
+  <div class="card-container">
+    <div *ngIf="!cardService.card">
+      <p>Wait Please</p>
+    </div>
+    <div *ngIf="cardService.card?.length == 0">
+      <p>
+        You have not added any cards yet. You can add a card click
+        <a class="text-primary open-card-cursor" (click)="openCardModal()"
+          >here</a
+        >.
+      </p>
+    </div>
+    <div *ngFor="let card of cardService.card">
+      <app-card [card]="card"></app-card>
+    </div>
   </div>
-  <div *ngIf="cardService.card?.length == 0">
-    <p>You have not added any cards yet. You can add a card click <a class="text-primary open-card-cursor" (click)="openCardModal()">here</a>.</p>
-  </div>
-  <div *ngFor="let card of cardService.card">
-    <app-card [card]="card" ></app-card>
-  </div>
-</div>
-  
 </main>
