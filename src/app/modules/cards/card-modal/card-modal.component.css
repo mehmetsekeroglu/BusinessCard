@@ -7,3 +7,11 @@
   .example-full-width {
     width: 100%;
   }
+
+.mat-dialog-action{
+  display: flex !important;
+  justify-content: space-between !important;
+}
+.delete-button-margin{
+  margin-right: 8vw;
+}

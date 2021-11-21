@@ -11,33 +11,24 @@ import { CardModalComponent } from './card-modal/card-modal.component';
 })
 export class CardsComponent implements OnInit {
 
- cards!: Card[];
-
+ 
   constructor(
     public dialog: MatDialog,
-    private cardService: CardService
+    public cardService: CardService
     ) { }
 
   ngOnInit(): void {
-    this.getCards()
+    this.cardService.getCards()
   }
 
   openCardModal(): void {
-    const dialog= this.dialog.open(CardModalComponent, {
-      width: '400px'
+   this.dialog.open(CardModalComponent, {
+      width: '30vw'
     });
-    dialog.afterClosed().subscribe(res=>{
-      if(res){
-        this.getCards()
-      }
-    })
+   
   }
 
-  getCards(): void {
-    this.cardService.getCards().subscribe((res:any)=> {                     //Card[] type verilemedi simdilik any verildi
-      this.cards = res
-    })
-  }
+ 
 
  
 }

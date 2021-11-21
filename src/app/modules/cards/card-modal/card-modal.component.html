@@ -1,29 +1,59 @@
-<h2 mat-dialog-title>{{data ? "Edit Card" : "New Card"}}</h2>
+<h2 mat-dialog-title>{{ data ? "Edit Card" : "New Card" }}</h2>
 <mat-dialog-content class="mat-typography">
+  <mat-progress-bar *ngIf="showSpinner" mode="indeterminate"></mat-progress-bar>
+  <br />
   <form [formGroup]="formCard">
     <mat-form-field class="example-full-width" appearance="fill">
-        <mat-label>Title</mat-label>
-        <input matInput formControlName="title" value="data.title">
-      </mat-form-field>
-      <mat-form-field class="example-full-width" appearance="fill">
-        <mat-label>Name</mat-label>
-        <input matInput formControlName="name" value="data.name">
-      </mat-form-field>
-      <mat-form-field class="example-full-width" appearance="fill" value="data.phone">
-        <mat-label>Phone</mat-label>
-        <input matInput formControlName="phone">
-      </mat-form-field>
-      <mat-form-field class="example-full-width" appearance="fill">
-        <mat-label>E-Mail</mat-label>
-        <input matInput formControlName="email">
-      </mat-form-field>
-      <mat-form-field class="example-full-width" appearance="fill">
-        <mat-label>Address</mat-label>
-        <input matInput formControlName="address">
-      </mat-form-field>
+      <mat-label>Title</mat-label>
+      <input matInput formControlName="title" value="data.title" />
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Name</mat-label>
+      <input matInput formControlName="name" value="data.name" />
+    </mat-form-field>
+    <mat-form-field
+      class="example-full-width"
+      appearance="fill"
+      value="data.phone"
+    >
+      <mat-label>Phone</mat-label>
+      <input matInput formControlName="phone" />
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>E-Mail</mat-label>
+      <input matInput formControlName="email" />
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Address</mat-label>
+      <input matInput formControlName="address" />
+    </mat-form-field>
   </form>
 </mat-dialog-content>
-<mat-dialog-actions align="end">
-  <button mat-button mat-dialog-close >Cancel</button>
-  <button mat-button (click)="data ? updateCard() : addCard()">Save</button>
+<mat-dialog-actions >
+ 
+    <button
+    class="delete-button-margin"
+      mat-button
+      mat-dialog-close
+      mat-raised-button
+      color="accent"
+      [disabled]="showSpinner"
+      *ngIf="data"
+      (click)="deleteCard()"
+    >
+      Delete
+    </button>
+    <button mat-button mat-stroked-button color="warn" mat-dialog-close>
+      Cancel
+    </button>
+    <button
+      mat-button
+      mat-stroked-button
+      color="primary"
+      [disabled]="formCard.invalid || showSpinner"
+      (click)="data ? updateCard() : addCard()"
+    >
+      Save
+    </button>
+  
 </mat-dialog-actions>

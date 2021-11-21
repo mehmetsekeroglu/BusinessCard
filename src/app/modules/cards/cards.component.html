@@ -10,7 +10,13 @@
   </div>
 <hr/>
 <div class="card-container">
-  <div *ngFor="let card of cards">
+  <div *ngIf="!cardService.card">
+    <p>Wait Please</p> 
+  </div>
+  <div *ngIf="cardService.card?.length == 0">
+    <p>You have not added any cards yet. You can add a card click <a class="text-primary open-card-cursor" (click)="openCardModal()">here</a>.</p>
+  </div>
+  <div *ngFor="let card of cardService.card">
     <app-card [card]="card" ></app-card>
   </div>
 </div>

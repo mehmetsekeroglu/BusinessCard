@@ -8,15 +8,18 @@ import { Card } from '../models/card';
 })
 export class CardService {
 
-  
+card!: Card[]  
 
   constructor(
     @Inject('apiUrl') private apiUrl: String,
     private http: HttpClient
   ) { }
 
-  getCards(){
-    return this.http.get(this.apiUrl+"/cards")
+  getCards():void {
+    this.http.get<Card[]>(this.apiUrl+"/cards")
+    .subscribe((res:Card[])=>{
+      this.card = res
+    })
   }
 
   addCard(card:Card): Observable<any>{
@@ -26,6 +29,12 @@ export class CardService {
   updateCard(card:Card, cardId:number): Observable<any>{
     return this.http.put(this.apiUrl+"/cards/"+ cardId, card)
   }
+
+  deleteCard(cardId:number):Observable<any>{
+    return this.http.delete(this.apiUrl+ "/cards/ "+ cardId)
+  }
+
+
 }
 
 
