@@ -1,11 +1,11 @@
-.example-spacer {
-    flex: 1 1 auto;
-  }
+/* .example-spacer {
+    flex: 1 auto;
+  } */
 
 .header-menu{
     display: flex;
     list-style: none;
-    width: 20vw;
+    width: 50vw;
     justify-content: space-between;
 }
 a{
@@ -19,3 +19,11 @@ a{
 }
 
 
+.mat-toolbar{
+    display: flex;
+    justify-content: space-between;
+}
+
+.login-button{
+    list-style: none;
+}

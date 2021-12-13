@@ -5,11 +5,15 @@
        <ul class="header-menu">
            <li><a routerLink='/' routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" >Home</a></li>
            <li><a routerLink='/about' routerLinkActive="active" >About</a></li>
-           <li><a routerLink='/cards' routerLinkActive="active" >My Cards</a></li>
-          
-           
-           
+           <li *ngIf="auth.user$ | async as user" ><a routerLink='/cards' routerLinkActive="active" >My Cards</a></li>  
        </ul>
-    </mat-toolbar>   
+       <ul class="login-button">
+           <li>
+               <app-login-button></app-login-button>    
+           </li>
+       </ul>
+      
+    </mat-toolbar> 
+   
 </header>
        

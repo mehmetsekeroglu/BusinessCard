@@ -10,6 +10,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { HttpClientModule } from '@angular/common/http';
 
+import { AuthModule } from '@auth0/auth0-angular';
+import { LoginButtonComponent } from './components/login-button/login-button.component';
+import { MatButtonModule } from '@angular/material/button';
+
 
 
 
@@ -18,14 +22,20 @@ import { HttpClientModule } from '@angular/common/http';
     AppComponent,
     HeaderComponent,
     HomeComponent,
-    AboutComponent
+    AboutComponent,
+    LoginButtonComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    MatButtonModule,
     MatToolbarModule,
-    HttpClientModule
+    HttpClientModule,
+    AuthModule.forRoot({
+      domain: 'dev-h73v4k1a.eu.auth0.com',
+      clientId: '0wVWqfUjMOh7Mq6ybspqeFmNHglKYcAi'
+    }),
   ],
   providers: [
     {
