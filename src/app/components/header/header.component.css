@@ -1,15 +1,23 @@
-/* .example-spacer {
+.example-spacer {
     flex: 1 auto;
-  } */
+  }
 
 .header-menu{
     display: flex;
     list-style: none;
-    width: 50vw;
+    width: 70vw;
+    justify-content: flex-start;
+}
+.link-menu{
+    display: flex;
+    list-style: none;
     justify-content: space-between;
 }
+li{
+    padding-right: 2vw;
+}
 a{
-    color:black;
+    color:rgb(219, 235, 74);
     text-decoration: none;
     opacity: 0.5;
 }

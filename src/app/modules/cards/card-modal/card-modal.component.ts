@@ -50,8 +50,7 @@ export class CardModalComponent implements OnInit {
     this.showSpinner=true;
     this.cardService.updateCard(this.formCard.value, this.data.id)
                     .subscribe((res:any)=>{
-                      this.getSuccess("The card has been successfully edited.");
-                      
+                      this.getSuccess("The card has been successfully edited.");             
     })
   }
 
@@ -71,6 +70,4 @@ export class CardModalComponent implements OnInit {
     this.showSpinner=false;
     this.dialogRef.close();
   }
- 
-
 }

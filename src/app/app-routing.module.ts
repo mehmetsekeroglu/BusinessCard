@@ -12,7 +12,8 @@ const routes: Routes = [
     path: 'about',
     component: AboutComponent
   },
-  { path: 'cards', loadChildren: () => import('./modules/cards/cards.module').then(m => m.CardsModule) }, 
+  { path: 'cards', loadChildren: () => import('./modules/cards/cards.module').then(m => m.CardsModule) },
+  { path: 'todo', loadChildren: () => import('./modules/todo/todo.module').then(m => m.TodoModule) }, 
 ];
 
 @NgModule({

@@ -1,0 +1,40 @@
+{
+  "cards": [
+    {
+      "id": "1",
+      "name": "Mehmet Sekeroglu",
+      "title": "Frontend Web Developer",
+      "phone": "123 456 56 78",
+      "email": "mehmet@gmail.com",
+      "address": "Luzern"
+    },
+    {
+      "id": "1",
+      "name": "Mehmet Sekeroglu",
+      "title": "Backend Web Developer",
+      "phone": "123 456 56 78",
+      "email": "mehmet@gmail.com",
+      "address": "Luzern"
+    },
+    {
+      "title": "Software Engineer",
+      "name": "Hüsniye Sekeroglu",
+      "phone": "123 4567890",
+      "email": "husniye@gmail.com",
+      "address": "Luzern",
+      "id": "ihxht8g"
+    }
+  ],
+  "todo": [
+    {
+      "title": "web",
+      "status": false,
+      "id": 1
+    },
+    {
+      "title": "mm",
+      "status": false,
+      "id": 3
+    }
+  ]
+}

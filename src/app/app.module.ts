@@ -13,8 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AuthModule } from '@auth0/auth0-angular';
 import { LoginButtonComponent } from './components/login-button/login-button.component';
 import { MatButtonModule } from '@angular/material/button';
-
-
+import {MatTableModule} from '@angular/material/table';
 
 
 @NgModule({
@@ -32,6 +31,7 @@ import { MatButtonModule } from '@angular/material/button';
     MatButtonModule,
     MatToolbarModule,
     HttpClientModule,
+    MatTableModule,
     AuthModule.forRoot({
       domain: 'dev-h73v4k1a.eu.auth0.com',
       clientId: '0wVWqfUjMOh7Mq6ybspqeFmNHglKYcAi'
@@ -39,8 +39,8 @@ import { MatButtonModule } from '@angular/material/button';
   ],
   providers: [
     {
-      provide : "apiUrl",
-      useValue: "https://demo.limantech.com/cards/public/api"
+      provide : "baseUrl",
+      useValue: "http://localhost:3000/"
     }
   ],
   bootstrap: [AppComponent]

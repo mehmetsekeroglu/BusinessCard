@@ -16,3 +16,9 @@ main{
     font-size: 1em;
     color: #777;
 }
+
+.mat-list-item-content{
+    width: 30vw;
+    display: flex;
+    justify-content: space-between;
+}

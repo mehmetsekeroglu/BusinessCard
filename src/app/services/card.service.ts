@@ -12,27 +12,27 @@ card!: Card[]
 filteredCard!: Card[]  
 
   constructor(
-    @Inject('apiUrl') private apiUrl: String,
+    @Inject('baseUrl') private baseUrl: String,
     private http: HttpClient
   ) { }
 
   getCards():void {
-    this.http.get<Card[]>(this.apiUrl+"/cards")
+    this.http.get<Card[]>(this.baseUrl+"cards")
     .subscribe((res:Card[])=>{
       this.card = this.filteredCard = res;
     })
   }
 
   addCard(card:Card): Observable<any>{
-    return this.http.post(this.apiUrl+"/cards", card)
+    return this.http.post(this.baseUrl+"cards", card)
   }
 
   updateCard(card:Card, cardId:number): Observable<any>{
-    return this.http.put(this.apiUrl+"/cards/"+ cardId, card)
+    return this.http.put(this.baseUrl+"cards/"+ cardId, card)
   }
 
   deleteCard(cardId:number):Observable<any>{
-    return this.http.delete(this.apiUrl+ "/cards/ "+ cardId)
+    return this.http.delete(this.baseUrl+ "cards/"+ cardId)
   }
 
 

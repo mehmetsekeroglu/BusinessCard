@@ -35,7 +35,6 @@ export class CardComponent implements OnInit {
     this.cardService.deleteCard(card.id)
                     .subscribe((res:any)=>{
                       this.cardService.getCards();
-                    
                     })
   }
  
