@@ -3,20 +3,15 @@ import { CommonModule } from '@angular/common';
 
 import { TodoRoutingModule } from './todo-routing.module';
 import { TodoComponent } from './todo.component';
-import {MatListModule} from '@angular/material/list';
-import {MatCheckboxModule} from '@angular/material/checkbox';
-import {MatButtonModule} from '@angular/material/button';
-import {MatInputModule} from '@angular/material/input';
+import { MatListModule } from '@angular/material/list';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 
-
-
-
 @NgModule({
-  declarations: [
-    TodoComponent,
-  ],
+  declarations: [TodoComponent],
   imports: [
     CommonModule,
     TodoRoutingModule,
@@ -26,10 +21,7 @@ import { MatIconModule } from '@angular/material/icon';
     MatInputModule,
     FormsModule,
     ReactiveFormsModule,
-    MatIconModule
-
-
-    
-  ]
+    MatIconModule,
+  ],
 })
-export class TodoModule { }
+export class TodoModule {}
