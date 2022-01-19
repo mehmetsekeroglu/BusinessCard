@@ -11,17 +11,38 @@ import { TodoService } from 'src/app/services/todo.service';
 export class TodoComponent implements OnInit {
   todoList!: TodoItem[];
   todoItem!: TodoItem;
+  completedTask!: TodoItem;
+  completedTasks!: TodoItem[];
+  openTask!: TodoItem;
+  openTasks!: TodoItem[];
   todoLength!: number;
 
   constructor(private todoService: TodoService) {}
 
   ngOnInit(): void {
     this.getItems();
+    this.getCompletedItems();
+    this.getOpenItems();
+    
   }
 
   getItems() {
-    this.todoService.getTodoItems().subscribe((list) => (this.todoList = list));
+    this.todoService.getTodoItems().subscribe((list) => list = this.todoList);
+   
   }
+
+  getOpenItems() {
+    this.todoService.getTodoItems().subscribe((list) => {
+      this.openTasks= list.filter(item=>item.status===true)
+    });
+  }
+
+  getCompletedItems() {
+    this.todoService.getTodoItems().subscribe((list) => {
+      this.completedTasks= list.filter(item=>item.status===false)
+    });
+  }
+
 
   addItem(title: string) {
     this.todoService
@@ -30,11 +51,19 @@ export class TodoComponent implements OnInit {
     this.todoItem = { title: title, status: true, id: this.todoLength };
     this.todoService
       .addTodoItems(this.todoItem)
-      .subscribe((item) => this.todoList.push(item));
+      .subscribe((item) => this.openTasks.push(item));
   }
 
   deleteItem(id: number) {
-    this.todoList = this.todoList.filter((todo) => todo.id !== id);
+    this.openTasks = this.openTasks.filter((todo) => todo.id !== id);
+    this.completedTasks = this.completedTasks.filter((todo) => todo.id !== id);
     this.todoService.deleteTodoItems(id).subscribe();
+  }
+
+  changeStatus(item: TodoItem) {
+    this.completedTask = { title: item.title, status: !item.status, id: item.id };
+    this.todoService.updateTodoItems(this.completedTask).subscribe();
+    this.getOpenItems()
+    this.getCompletedItems()
   }
 }

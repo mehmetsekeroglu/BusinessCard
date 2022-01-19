@@ -5,8 +5,8 @@
        <ul class="header-menu">
            <li><a routerLink='/' routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" >Home</a></li>
            <li><a routerLink='/about' routerLinkActive="active" >About</a></li>
-           <li *ngIf="auth.user$ | async as user" ><a routerLink='/cards' routerLinkActive="active" >My Cards</a></li>  
-           <li *ngIf="auth.user$ | async as user" ><a routerLink='/todo' routerLinkActive="active" >ToDo</a></li>  
+           <li><a routerLink='/cards' routerLinkActive="active" >My Cards</a></li>  
+           <li><a routerLink='/todo' routerLinkActive="active" >ToDo</a></li>  
        </ul>
        <ul class="login-button">
            <li>
@@ -20,3 +20,4 @@
    
 </header>
        
+<!-- *ngIf="auth.user$ | async as user" -->

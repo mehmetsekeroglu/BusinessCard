@@ -7,20 +7,66 @@
       </p>
     </div>
   </div>
-  <hr/>
+  <hr />
   <div class="todo-container">
     <div>
-    <label for="add-todo-item"></label>
-    <input id="add-todo-item" type="text" #todo>
-    <button mat-button (click)="addItem(todo.value); todo.value='' ">Add New Task</button>
+      <label for="add-todo-item"></label>
+      <input id="add-todo-item" type="text" #todo />
+      <button mat-button (click)="addItem(todo.value); todo.value = ''">
+        Add New Task
+      </button>
     </div>
-    <div>
-     <h2>ToDo</h2>
-    <ul>
-      <li *ngFor="let item of todoList"> {{item.title}} <button (click)="deleteItem(item.id)" mat-raised-button color="warn">Delete</button></li>
-    </ul> 
+    <div class="task-container">
+      <div class="open-task-container">
+        <h2>ToDo</h2>
+        <ul>
+          <li *ngFor="let item of openTasks">
+            {{ item.title }}
+            <span class="item-button-container">
+               <button
+              mat-raised-button
+              color="primary"
+              (click)="changeStatus(item)"
+            >
+              Action
+            </button>
+            <button
+              (click)="deleteItem(item.id)"
+              mat-raised-button
+              color="warn"
+            >
+              Delete
+            </button>
+            </span>
+           
+          </li>
+        </ul>
+      </div>
+      <div class="complated-task-container">
+        <h2>Completed Tasks</h2>
+        <ul>
+          <li *ngFor="let item of completedTasks">
+            {{ item.title }}
+            <span class="item-button-container">
+              <button
+              mat-raised-button
+              color="primary"
+              (click)="changeStatus(item)"
+            >
+              Action
+            </button>
+            <button
+              (click)="deleteItem(item.id)"
+              mat-raised-button
+              color="warn"
+            >
+              Delete
+            </button>
+            </span>
+            
+          </li>
+        </ul>
+      </div>
     </div>
-    
-    
   </div>
 </main>

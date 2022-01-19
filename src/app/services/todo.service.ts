@@ -25,6 +25,9 @@ export class TodoService {
     return this.http.delete<TodoItem>(this.baseUrl+"todo/"+id)
   }
 
+  updateTodoItems(item:TodoItem):Observable<TodoItem>{
+    return this.http.put<TodoItem>(this.baseUrl+"todo/"+item.id, item)
+  }
 }
 
 

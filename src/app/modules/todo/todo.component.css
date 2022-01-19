@@ -6,3 +6,36 @@
 .mat-list{
     border: black solid 1px;
 }
+
+.todo-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.task-container{
+    display: flex;
+}
+
+.open-task-container{
+    width: 30vw;
+}
+
+.complated-task-container{
+    width: 30vw;
+}
+
+li{
+    display: flex;
+    justify-content: space-between;
+    padding: 1vh;
+}
+
+.item-button-container{
+   width: 40%; 
+   display: flex;
+   justify-content: space-around;
+}
+
+h2{
+    text-align: center;
+}
